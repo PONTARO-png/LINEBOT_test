@@ -10,7 +10,7 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 import os
-
+from collections.abc import Mapping
 app = Flask(__name__)
 
 #環境変数取得
