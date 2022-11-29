@@ -13,3 +13,14 @@ on_worker_boot do
   # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
   ActiveRecord::Base.establish_connection
 end
+
+before_fork do
+  PumaWorkerKiller.config do |config|
+    config.ram           = 1024 
+    config.frequency     = 5    
+    config.percent_usage = 0.65
+    config.rolling_restart_frequency = 12 * 3600 
+    config.reaper_status_logs = true
+  end
+  PumaWorkerKiller.start
+end
