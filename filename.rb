@@ -1,1 +1,0 @@
-gem 'puma_worker_killer'
