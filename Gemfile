@@ -7,3 +7,4 @@ gem 'puma_worker_killer'
 gem 'puma'
 gem 'get_process_mem'
 gem 'ffi'
+gem 'derailed', group: :development
